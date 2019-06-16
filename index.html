@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countrysearch</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Country search engine</h1>
+        <button id="search">Search a country</button>
+        <input id="country-name" type="text">
+        <h2>List of countries</h2>
+        <div id="countries">
+            <div>No data</div>
+        </div>
+    </div>
+    <script id="country-template" type="x-tmpl-mustache">
+        <div class="country-card">
+            <div class="card-header">
+                <div class="country-flag"><img src={{flag}} alt="country flag"></div>
+                <div class="country-name">{{name}}</div>
+            </div>
+            <div class="card-body">
+                <div class="body-header">General Information:</div>
+                <div class="position-wrapper">
+                    <div class="position-title">Capital:</div>
+                    <div class="position-description">{{capital}}</div>
+                </div>
+                <div class="position-wrapper">
+                    <div class="position-title">Language:</div>
+                    <div class="position-description">{{languages}}</div>
+                </div>
+                <div class="position-wrapper">
+                    <div class="position-title">Currency:</div>
+                    <div class="position-description"> {{currenciesName}}</div>
+                </div>
+                <div class="position-wrapper">
+                    <div class="position-title">Land area:</div>
+                    <div class="position-description">{{area}} sq.km</div>
+                </div>
+                <div class="position-wrapper">
+                    <div class="position-title">Population:</div>
+                    <div class="position-description">{{population}} people</div>
+                </div>
+                <div class="position-wrapper">
+                    <div class="position-title">Region:</div>
+                    <div class="position-description">{{region}}</div>
+                </div>
+                <div class="position-wrapper">
+                    <div class="position-title">Subregion:</div>
+                    <div class="position-description">{{subregion}}</div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
