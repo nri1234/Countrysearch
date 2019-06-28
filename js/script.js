@@ -23,10 +23,15 @@ function searchCountries() {
         .then(showCountriesList);
 }
 
-
 function showCountriesList(resp) {
+    var countryName = document.getElementById('country-name').value;
+    var result = resp.filter(function (country) {
+        var filteredName = country.name.toLowerCase();
+        var filteredCountryName = countryName.toLowerCase();
+        return filteredName.includes(filteredCountryName);
+    });
     countriesList.innerHTML = '';
-    resp.forEach(function (country) {
+    result.forEach(function (country) {
         generateTemplate(country);
     });
 }
