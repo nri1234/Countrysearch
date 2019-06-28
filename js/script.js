@@ -26,9 +26,9 @@ function searchCountries() {
 function showCountriesList(resp) {
     var countryName = document.getElementById('country-name').value;
     var result = resp.filter(function (country) {
-        var filteredName = country.name.toLowerCase();
+        var result = country.name.toLowerCase();
         var filteredCountryName = countryName.toLowerCase();
-        return filteredName.includes(filteredCountryName);
+        return result.includes(filteredCountryName);
     });
     countriesList.innerHTML = '';
     result.forEach(function (country) {
